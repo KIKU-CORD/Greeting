@@ -1,7 +1,7 @@
 package User;
 
 /*
- * ユーザーステータス
+ * 繝ｦ繝ｼ繧ｶ繝ｼ繧ｹ繝�繝ｼ繧ｿ繧ｹ
  */
 
 public enum Status {
