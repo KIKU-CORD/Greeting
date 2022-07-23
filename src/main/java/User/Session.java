@@ -13,27 +13,21 @@ public class Session {
 	
 	public static void setup(String name, String password) {
 		
-		//ƒ†[ƒU[î•ñ‚ğì¬
+		//ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ã‚’ä½œæˆ
 		player = new Player();
 		player.setName(name);
 		player.setID(System.getProperty("user.name"));
 		
-		//ƒ†[ƒU[‚ÌŒ ŒÀİ’è
-		if(password.equals("chatowner.0064!?")) {
-			player.setRank("owner");
-		} else if(password.equals("chatmod.0064!?")) {
-			player.setRank("mod");
-		} else if(password.equals("chatdesign.0064!?")) {
-			player.setRank("design");
-		} else { player.setRank("user");}
+		//ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®æ¨©é™è¨­å®š
+		player.setRank("user");
 		
-		//ƒ†[ƒU[‚ÌƒXƒe[ƒ^ƒX‚ğ•ÏX
+		//ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å¤‰æ›´
 		Main.status = Status.USER_ACCEPT;
 		
 		try { Sender.sendMessage("::login");
 		} catch (IOException e) {}
 		
-		//‹­§“I‚ÉƒIƒ“ƒ‰ƒCƒ“‚É•ÏX
+		//å¼·åˆ¶çš„ã«ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã«å¤‰æ›´
 		TimerTask task = new TimerTask() {
             public void run() {
             	if(Main.status == Status.USER_ACCEPT) {
