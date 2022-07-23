@@ -1,0 +1,11 @@
+Greeting Platform Settings
+
+chat_trans:false
+msg_trans:false
+your_mension:false
+all_mension:false
+html_mode:false
+c_trans_lang:0
+c_trans_do_lang:0
+m_trans_lang:0
+m_trans_do_lang:0
