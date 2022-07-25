@@ -65,7 +65,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 
 	private void open() {
 		
-		//ƒXƒNƒŠ[ƒ“ƒpƒlƒ‹’è‹`
+		//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ãƒ‘ãƒãƒ«å®šç¾©
 
 		frame = this;
 		frame.setSize(1280, 720);
@@ -181,7 +181,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 		chat = new JTextField(800);
 		chat.setText("");
 		chat.setForeground(Color.WHITE);
-		chat.setFont(new Font("‚l‚r ƒSƒVƒbƒN", Font.PLAIN, 16));
+		chat.setFont(new Font("ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯", Font.PLAIN, 16));
 		chat.addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent event) {}
@@ -198,10 +198,10 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 			public void actionPerformed(ActionEvent event) {
 				if(Main.status == Status.LOGIN) {
 					chat.setText("");
-					errorMessage("ƒƒOƒCƒ“‚µ‚Ä‚¢‚Ü‚¹‚ñI");
+					errorMessage("ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã¾ã›ã‚“ï¼");
 					return;}
 				if(chat.getText().equals("")) {
-					errorMessage("ƒXƒy[ƒX‚©‚ç‚Ì“ü—Í‚Å‚·I");
+					errorMessage("ã‚¹ãƒšãƒ¼ã‚¹ã‹ã‚‰ã®å…¥åŠ›ã§ã™ï¼");
 					return;}
 				ChatEvent(event);
 			}
@@ -216,7 +216,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 		frame.setVisible(false);
 		instance = this;
 		
-		//ƒŒƒ“ƒ_[ƒCƒxƒ“ƒg’è‹`
+		//ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¤ãƒ™ãƒ³ãƒˆå®šç¾©
 		
 		addMouseListener(this);
 		addMouseMotionListener(this);
@@ -224,26 +224,26 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	}
 	
 	/*
-	 * ƒ†[ƒU[ƒXƒe[ƒ^ƒXƒŒƒ“ƒ_[ƒŒƒ“ƒ_ƒŠƒ“ƒO
+	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°
 	 */
 	
 	public void renderStatus() {
 		login_html = "";
 		login.setText(login_html);
 		for(Player player : Main.getPlayers()) {
-			login_html += "<BR>" + "<font color=\"#008000\" size=\"4\" face=\"‚l‚r ƒSƒVƒbƒN\"><b>" + "* ONLINE" + "</b></font>";
-			login_html += "<BR>" + "<font color=\"#87cefa\" size=\"5\" face=\"‚l‚r ƒSƒVƒbƒN\">" + getRankText(player) + player.getName() + "<BR>";}
+			login_html += "<BR>" + "<font color=\"#008000\" size=\"4\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\"><b>" + "* ONLINE" + "</b></font>";
+			login_html += "<BR>" + "<font color=\"#87cefa\" size=\"5\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\">" + getRankText(player) + player.getName() + "<BR>";}
 		login.setContentType("text/html");
 		login.setText(login_html);
 		login.setCaretPosition(login.getDocument().getLength());
 	}
 	
 	/*
-	 * ƒVƒXƒeƒ€Aƒ†[ƒU[ƒƒbƒZ[ƒWƒŒƒ“ƒ_ƒŠƒ“ƒO
+	 * ã‚·ã‚¹ãƒ†ãƒ ã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°
 	 */
 	
 	public void renderSystemMsg(String message, String color) {
-		html += "<BR>" + "<font size=\"5\" face=\"‚l‚r ƒSƒVƒbƒN\" color=\"" + color + "\">" + "[SYSTEM] " + message + "</font>" + "<BR>";
+		html += "<BR>" + "<font size=\"5\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\" color=\"" + color + "\">" + "[SYSTEM] " + message + "</font>" + "<BR>";
 		board.setContentType("text/html");
 		board.setText(html);
 		board.setCaretPosition(board.getDocument().getLength());
@@ -254,7 +254,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 		String id = player.getID();
 		String message = player.getMessage();
 		
-		//ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ƒ`ƒFƒbƒN
+		//ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãƒã‚§ãƒƒã‚¯
 		
 		if(message.startsWith("::login")) {
 			if(!Main.getBanned().isEmpty() && Main.getBanned().contains(id)) {
@@ -263,7 +263,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 			return;}
 			Main.getPlayers().add(player);
 			renderStatus();
-			renderSystemMsg(getRankText(player) + name + " ‚³‚ñ‚ªƒ`ƒƒƒbƒg‚ÉQ‰Á‚µ‚Ü‚µ‚½I", "#00bfff");
+			renderSystemMsg(getRankText(player) + name + " ã•ã‚“ãŒãƒãƒ£ãƒƒãƒˆã«å‚åŠ ã—ã¾ã—ãŸï¼", "#00bfff");
 			if(Main.status == Status.ONLINE) {
 				try { Sender.sendMessage("::accept");
 				} catch (IOException e) {}}
@@ -283,7 +283,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 					Main.getPlayers().remove(players);
 					break;}}
 			renderStatus();
-			renderSystemMsg(getRankText(player) + name + " ‚³‚ñ‚ªƒ`ƒƒƒbƒg‚©‚ç’E‘Ş‚µ‚Ü‚µ‚½B", "#ffd700");
+			renderSystemMsg(getRankText(player) + name + " ã•ã‚“ãŒãƒãƒ£ãƒƒãƒˆã‹ã‚‰è„±é€€ã—ã¾ã—ãŸã€‚", "#ffd700");
 			return;
 		}else if(message.startsWith("::kick") || message.startsWith("::ban")) {
 			for(Player players : Main.getPlayers()) {
@@ -292,10 +292,10 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 					break;}}
 			renderStatus();
 			if(message.startsWith("::kick")) {
-				renderSystemMsg(getRankText(player) + name + " ‚³‚ñ‚ªƒ`ƒƒƒbƒg‚©‚çƒLƒbƒN‚³‚ê‚Ü‚µ‚½I", "#ff4500");
+				renderSystemMsg(getRankText(player) + name + " ã•ã‚“ãŒãƒãƒ£ãƒƒãƒˆã‹ã‚‰ã‚­ãƒƒã‚¯ã•ã‚Œã¾ã—ãŸï¼", "#ff4500");
 			} else if(message.startsWith("::ban")) {
 				Main.getBanned().add(id);
-				renderSystemMsg(getRankText(player) + name + " ‚³‚ñ‚ªƒ`ƒƒƒbƒg‚©‚çƒoƒ“‚³‚ê‚Ü‚µ‚½I", "#ff0000");}
+				renderSystemMsg(getRankText(player) + name + " ã•ã‚“ãŒãƒãƒ£ãƒƒãƒˆã‹ã‚‰ãƒãƒ³ã•ã‚Œã¾ã—ãŸï¼", "#ff0000");}
 			return;
 		} else if(message.contains("/msg_ban")) {
 			if(message.equals("/msg_ban " + Session.getUser().getID())) {
@@ -318,15 +318,15 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 		
 		Calendar cl = Calendar.getInstance();
 		SimpleDateFormat form = new SimpleDateFormat("yyyy/MM/dd '('h:mm a')'");
-		html += "<BR>" + "<font size=\"5\" face=\"‚l‚r ƒSƒVƒbƒN\" color=\"white\">" + getRankText(player) + player.getName() + "</font>" + "<font size=\"3\" face=\"‚l‚r ƒSƒVƒbƒN\" color=\"white\"> " + form.format(cl.getTime()) + "</font><BR>";
-		html += "<BR>" + "<font size=\"4\" face=\"‚l‚r ƒSƒVƒbƒN\" color=\"white\">" + getFormat(message) + "</font><BR>";
+		html += "<BR>" + "<font size=\"5\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\" color=\"white\">" + getRankText(player) + player.getName() + "</font>" + "<font size=\"3\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\" color=\"white\"> " + form.format(cl.getTime()) + "</font><BR>";
+		html += "<BR>" + "<font size=\"4\" face=\"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯\" color=\"white\">" + getFormat(message) + "</font><BR>";
 		board.setContentType("text/html");
 		board.setText(html);
 		board.setCaretPosition(board.getDocument().getLength());
 	}
 	
 	/*
-	 * ƒGƒ‰[ƒƒbƒZ[ƒWƒŒƒ“ƒ_ƒŠƒ“ƒO
+	 * ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°
 	 */
 	
 	public void errorMessage(String message) {
@@ -352,7 +352,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	}
 	
 	/*
-	 * ƒƒbƒZ[ƒWƒtƒH[ƒ}ƒbƒg§Œä
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆåˆ¶å¾¡
 	 */
 	
 	String getFormat(String message) {
@@ -387,20 +387,11 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	}
 	
 	String getRankText(Player player) {
-		switch(player.getRank()) {
-		case "owner":
-			return "[<font color=\"#FF0033\">š</font>] ";
-		case "mod":
-			return "[<font color=\"#00CCFF\">š</font>] ";
-		case "design":
-			return "[<font color=\"#990099\">š</font>] ";
-		default:
-			return "";
-		}
+		return "";
 	}
 	
 	/*
-	 * ƒ`ƒƒƒbƒgƒCƒxƒ“ƒg§Œä
+	 * ãƒãƒ£ãƒƒãƒˆã‚¤ãƒ™ãƒ³ãƒˆåˆ¶å¾¡
 	 */
 	
 	private void ChatEvent(ActionEvent event) {
@@ -409,7 +400,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 		chat.setText("");
 		if(Main.isUnicode(message)) {
 			if(alpha == 255) {
-				errorMessage("Unicode‚Í”ñ‘Î‰‚Å‚·I");
+				errorMessage("Unicodeã¯éå¯¾å¿œã§ã™ï¼");
 				return;}}
 		try {
 		if(hasPermission(message)) {
@@ -420,7 +411,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	}
 	
 	/*
-	 * ƒ}ƒEƒXƒCƒxƒ“ƒg§Œä
+	 * ãƒã‚¦ã‚¹ã‚¤ãƒ™ãƒ³ãƒˆåˆ¶å¾¡
 	 */
 	
 	@Override
@@ -449,7 +440,7 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	public void mouseReleased(MouseEvent arg0) {}
 	
 	/*
-	 * ƒRƒ“ƒ|[ƒlƒ“ƒgƒTƒCƒY§Œä
+	 * ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚µã‚¤ã‚ºåˆ¶å¾¡
 	 */
 	
 	@Override
@@ -474,21 +465,18 @@ public class ChatScreen extends JFrame implements MouseListener, MouseMotionList
 	public void componentShown(ComponentEvent arg0) {}
 	
 	/*
-	 * ƒXƒ^ƒbƒtŒ ŒÀ§Œä
+	 * ã‚¹ã‚¿ãƒƒãƒ•æ¨©é™åˆ¶å¾¡
 	 */
 	
 	public boolean hasPermission(String message) {
 		if(message.contains("/msg_ban")) {return false;}
 		if(Main.status == Status.BANNED) {
-			errorMessage("‚ ‚È‚½‚Íƒ`ƒƒƒbƒg‚©‚çƒoƒ“‚³‚ê‚Ä‚¢‚Ü‚·I"); return false;}
-		if(message.contains("/kick") || message.contains("/ban")) {
-			if(!Session.getUser().getRank().equals("user")) {return true;}
-			return false;}
+			errorMessage("ã‚ãªãŸã¯ãƒãƒ£ãƒƒãƒˆã‹ã‚‰ãƒãƒ³ã•ã‚Œã¦ã„ã¾ã™ï¼"); return false;}
 		return true;
 	}
 
 	/*
-	 * ƒNƒ‰ƒXƒCƒ“ƒXƒ^ƒ“ƒX
+	 * ã‚¯ãƒ©ã‚¹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	
 	public static ChatScreen getInstance() {
