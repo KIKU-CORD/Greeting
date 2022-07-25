@@ -13,7 +13,7 @@ public class Session {
 	
 	public static void setup(String name, String password) {
 		
-		//ユーザー情報を作成
+		//ユーザーを作成
 		player = new Player();
 		player.setName(name);
 		player.setID(System.getProperty("user.name"));
