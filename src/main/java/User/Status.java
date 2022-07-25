@@ -1,7 +1,7 @@
 package User;
 
 /*
- * ユーザーステータス
+ * ユーザーステータス情報
  */
 
 public enum Status {
