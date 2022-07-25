@@ -18,7 +18,7 @@ public class Session {
 		player.setName(name);
 		player.setID(System.getProperty("user.name"));
 		
-		//ユーザーの権限設定
+		//ユーザー設定
 		player.setRank("user");
 		
 		//ユーザーのステータスを変更
