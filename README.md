@@ -18,7 +18,7 @@
 対応OS: Windows (確認済み), MacOS, Linux
 # アプリケーションの起動方法
 ### アプリケーションのダウンロード
-このレポジトリの「Releases」からZIPをダウンロードします。  
+このレポジトリの「[Releases](https://github.com/KIKU-CORD/Greeting/releases/tag/Greeting)」からZIPをダウンロードします。  
 ダウンロードしたら解凍ソフトなどで展開してください。  
 
 **元々は部活動で作成したアプリなので個人情報は伏せています。**  
