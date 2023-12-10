@@ -19,16 +19,16 @@ public class Sender {
     @SuppressWarnings({ "resource", "deprecation" })
 	public static void sendMessage(String message) throws IOException {
  
-    	//�}���`�\�P�b�g�̑��M�A�h���X
+    	//マルチソケットの送信アドレス
         String multiCastAddress = "224.0.0.100";
         final int multiCastPort = 10011;
  
-        //�}���`�\�P�b�g�T�[�o�[�ɎQ��
+        //マルチソケットサーバーに参加
         InetAddress group = InetAddress.getByName(multiCastAddress);
         MulticastSocket s = new MulticastSocket(multiCastPort);
         s.joinGroup(group);
  
-        //���M�f�[�^�̏���
+        //送信データの準備
         Player player = Session.getUser();
         player.setMessage(message);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -37,7 +37,10 @@ public class Sender {
         
         byte[] data = baos.toByteArray();
  
-        //�f�[�^�𑗐M
+        //データを送信
         s.send(new DatagramPacket(data, data.length, group, multiCastPort));
+	
+	//送るたびにセッションを切断
+	s.close();
     }
 }
